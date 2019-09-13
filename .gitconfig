@@ -1,8 +1,6 @@
 [user]
 	email = mnaufal75@gmail.com
 	name = Muhammad Naufal
-[gui]
-	recentrepo = C:/Users/mnaufal75/Project/prelo
 
 [color]
 	ui = true
@@ -69,5 +67,5 @@
 	sa = stash apply
 	ss = stash save
 [core]
-	autocrlf = true
+	autocrlf = false
 	excludesfile = C:\\Users\\mnaufal75\\Documents\\gitignore_global.txt
