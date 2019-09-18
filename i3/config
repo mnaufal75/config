@@ -169,6 +169,14 @@ mode "$mode_system" {
 # bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%- #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle # mute sound
 
+# Make the currently focused window a scratchpad
+bindsym $mod+Shift+minus move scratchpad
+# Show the first scratchpad window
+bindsym $mod+minus scratchpad show
+
+bindsym $mod+Home  exec python ~/scripts/i3-snap-window.py 1
+bindsym $mod+End exec python ~/scripts/i3-snap-window.py 2
+
 # Startup programs
 exec_always --no-startup-id  ~/.config/polybar/launchi3.sh
 exec --no-startup-id nm-applet
