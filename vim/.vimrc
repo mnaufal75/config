@@ -15,6 +15,7 @@ Plugin 'joshdick/onedark.vim' " One Dark Theme
 Plugin 'Yggdroot/indentLine' " Show indentation line
 Plugin 'junegunn/fzf' " Fuzzy finder
 Plugin 'junegunn/fzf.vim'
+Plugin 'ryanoasis/vim-devicons' " Icon on Vim
 
 call vundle#end()
 
@@ -38,9 +39,9 @@ set ruler
 set backspace=indent,eol,start
 set laststatus=2
 set number
+set relativenumber
 set undofile
-
-set pastetoggle=<F2>
+set mouse=a
 
 " Turn off backup
 set nobackup
@@ -64,22 +65,30 @@ au BufNewFile,BufRead *.js,*.html,*.css
 highlight BadWhitespace ctermbg=red guibg=darkred
 au BufNewFile,BufRead *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
 
+au FileType javascript setlocal formatprg=prettier
+au FileType javascript.jsx setlocal formatprg=prettier
+au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
+au FileType html setlocal formatprg=js-beautify\ --type\ html
+au FileType css setlocal formatprg=prettier\ --parser\ css
+
 let mapleader = ','
 
 " Remap ESC to ii
-imap jk <Esc>
+inoremap jk <Esc>
+" Disable ESC key in Insert mode
+inoremap <Esc> <nop>
 
 " Disable arrow keys in Normal mode
-no <Up> <Nop>
-no <Down> <Nop>
-no <Left> <Nop>
-no <Right> <Nop>
+nnoremap <Up> <Nop>
+nnoremap <Down> <Nop>
+nnoremap <Left> <Nop>
+nnoremap <Right> <Nop>
 
 " Disable arrow keys in Insert mode
-ino <Up> <Nop>
-ino <Down> <Nop>
-ino <Left> <Nop>
-ino <Right> <Nop>
+inoremap <Up> <Nop>
+inoremap <Down> <Nop>
+inoremap <Left> <Nop>
+inoremap <Right> <Nop>
 
 """""""""""
 "  Theme  "

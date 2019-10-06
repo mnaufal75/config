@@ -7,3 +7,4 @@ alias ls='ls --color=auto'
 alias dir='dir --color=auto'
 
 alias sb='source ~/.bashrc'
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash

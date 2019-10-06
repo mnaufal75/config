@@ -199,3 +199,10 @@ for_window [class="krunner"] floating enable, border none
 for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
+
+## Assign programs to certain workspaces
+assign [class="Firefox"] $tag1
+assign [class="dolphin"] $tag3
+assign [class="code"] $tag4
+assign [class="cantata"] $tag5
+assign [class="systemsettings"] $tag5
