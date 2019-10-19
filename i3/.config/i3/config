@@ -3,7 +3,7 @@ for_window [class="^.*"] border pixel 0
 
 set $mod Mod4
 
-font pango: SF Pro Display 12
+font pango: SF Pro Display 8
 
 set $black        #282828
 set $darkblack    #1d2021
@@ -22,8 +22,6 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec termite
 bindsym $mod+d exec --no-startup-id rofi -show drun -m -1
-# bindsym $mod+shift+m exec --no-startup-id $HOME/.config/rofi/scripts/mpdcontrol.sh
-bindsym $mod+shift+m exec --no-startup-id $HOME/wifi-reconnect.sh
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -137,7 +135,6 @@ bar {
 
     	# i3bar_command i3bar
         # status_command i3status -c ~/.config/i3/i3status.conf
-        # status_command SCRIPT_DIR=/usr/share/i3blocks i3blocks -c ~/.config/
 }
 
 # Colors          Border       Background Text
@@ -206,3 +203,4 @@ assign [class="dolphin"] $tag3
 assign [class="code"] $tag4
 assign [class="cantata"] $tag5
 assign [class="systemsettings"] $tag5
+assign [class="ktorrent"] $tag6
