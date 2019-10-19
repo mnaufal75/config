@@ -10,12 +10,15 @@ Plugin 'tpope/vim-commentary' " Easy commenting
 Plugin 'scrooloose/nerdtree'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'pangloss/vim-javascript' " Js hightlight
-Plugin 'mxw/vim-jsx' " Jsx highlight
+Plugin 'maxmellon/vim-jsx-pretty' " Jsx highlight
 Plugin 'joshdick/onedark.vim' " One Dark Theme
 Plugin 'Yggdroot/indentLine' " Show indentation line
 Plugin 'junegunn/fzf' " Fuzzy finder
 Plugin 'junegunn/fzf.vim'
 Plugin 'ryanoasis/vim-devicons' " Icon on Vim
+Plugin 'iamcco/markdown-preview.nvim' " Markdown
+Plugin 'w0rp/ale'
+Plugin 'jiangmiao/auto-pairs'
 
 call vundle#end()
 
@@ -148,3 +151,19 @@ nnoremap <silent> <leader>gs :GFiles?<CR> " Search for git status
 " Vim-commentary "
 """"""""""""""""""
 autocmd FileType python setlocal commentstring=#\ %s
+
+"""""""
+" ALE "
+"""""""
+let g:ale_sign_column_always = 1
+let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
+let g:ale_linters = {'javascript': ['eslint']}
+
+" Enable completion where available.
+let g:ale_completion_enabled = 1
+
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
+
+" Keep the sign gutter open at all time
+let g:ale_sign_column_always = 1
