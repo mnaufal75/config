@@ -1,26 +1,25 @@
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+call plug#begin('~/.vim/plugged')
 
-Plugin 'VundleVim/Vundle.vim'
-Plugin 'tpope/vim-fugitive'
-Plugin 'tpope/vim-commentary' " Easy commenting
-Plugin 'scrooloose/nerdtree'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'pangloss/vim-javascript' " Js hightlight
-Plugin 'maxmellon/vim-jsx-pretty' " Jsx highlight
-Plugin 'joshdick/onedark.vim' " One Dark Theme
-Plugin 'Yggdroot/indentLine' " Show indentation line
-Plugin 'junegunn/fzf' " Fuzzy finder
-Plugin 'junegunn/fzf.vim'
-Plugin 'ryanoasis/vim-devicons' " Icon on Vim
-Plugin 'iamcco/markdown-preview.nvim' " Markdown
-Plugin 'w0rp/ale'
-Plugin 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-commentary' " Easy commenting
+Plug 'scrooloose/nerdtree'
+Plug 'airblade/vim-gitgutter'
+Plug 'pangloss/vim-javascript' " Js hightlight
+Plug 'maxmellon/vim-jsx-pretty' " Jsx highlight
+Plug 'joshdick/onedark.vim' " One Dark Theme
+Plug 'Yggdroot/indentLine' " Show indentation line
+Plug 'junegunn/fzf' " Fuzzy finder
+Plug 'junegunn/fzf.vim'
+Plug 'ryanoasis/vim-devicons' " Icon on Vim
+Plug 'iamcco/markdown-preview.nvim' " Markdown
+" Plug 'w0rp/ale'
+Plug 'jiangmiao/auto-pairs'
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
-call vundle#end()
+call plug#end()
 
 set tabstop=4
 set shiftwidth=4
@@ -50,6 +49,12 @@ set mouse=a
 set nobackup
 set nowb
 set noswapfile
+
+" Better display for messages
+set cmdheight=2
+
+" You will have bad experience for diagnostic messages when it's default 4000.
+set updatetime=300
 
 au BufNewFile,BufRead *.py
     \ set tabstop=4 |
@@ -96,9 +101,6 @@ inoremap <Right> <Nop>
 """""""""""
 "  Theme  "
 """""""""""
-" Black theme
-set background=dark
-
 " Add underline syntax details
 syntax enable
 
@@ -109,6 +111,9 @@ let g:onedark_color_overrides = {
 \}
 let g:onedark_terminal_italics = 1
 colorscheme onedark 
+
+" Black theme
+set background=dark
 
 """"""""""""""""""""
 "  NerdTreeToogle  "
@@ -155,15 +160,44 @@ autocmd FileType python setlocal commentstring=#\ %s
 """""""
 " ALE "
 """""""
-let g:ale_sign_column_always = 1
-let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
-let g:ale_linters = {'javascript': ['eslint']}
+" let g:ale_sign_column_always = 1
+" let g:ale_fixers = {'javascript': ['prettier', 'eslint']}
+" let g:ale_linters = {'javascript': ['eslint']}
 
-" Enable completion where available.
-let g:ale_completion_enabled = 1
+" " Enable completion where available.
+" " let g:ale_completion_enabled = 1
 
-" Set this variable to 1 to fix files when you save them.
-let g:ale_fix_on_save = 1
+" " Set this variable to 1 to fix files when you save them.
+" let g:ale_fix_on_save = 1
 
-" Keep the sign gutter open at all time
-let g:ale_sign_column_always = 1
+" " Keep the sign gutter open at all time
+" let g:ale_sign_column_always = 1
+
+""""""""""""""
+"  coc.nvim  "
+""""""""""""""
+" Use tab for trigger completion with characters ahead and navigate.
+" Use command ':verbose imap <tab>' to make sure tab is not mapped by other plugin.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+    let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+" Use <c-space> to trigger completion.
+inoremap <silent><expr> <c-space> coc#refresh()
+
+" Use `[g` and `]g` to navigate diagnostics
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" Remap keys for gotos
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
