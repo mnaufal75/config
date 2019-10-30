@@ -171,13 +171,13 @@ bindsym $mod+Shift+minus move scratchpad
 # Show the first scratchpad window
 bindsym $mod+minus scratchpad show
 
-bindsym $mod+Home  exec python ~/scripts/i3-snap-window.py 1
+bindsym $mod+Home exec python ~/scripts/i3-snap-window.py 1
 bindsym $mod+End exec python ~/scripts/i3-snap-window.py 2
 
 # Startup programs
 exec_always --no-startup-id  ~/.config/polybar/launchi3.sh
 exec --no-startup-id nm-applet
-exec --no-startup-id compton --config ~/.config/i3/compton.conf &
+exec --no-startup-id compton --config ~/.config/compton/compton.conf &
 exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
@@ -197,10 +197,20 @@ for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
 
+for_window [title="Statistics"] floating enable, border none
+for_window [title="Browse"] floating enable, border none
+for_window [title="Add"] floating enable, border none
+
 ## Assign programs to certain workspaces
 assign [class="Firefox"] $tag1
 assign [class="dolphin"] $tag3
-assign [class="code"] $tag4
+assign [class="Anki"] $tag3
+assign [class="code"] $tag3
+assign [class="qt5ct"] $tag4
+assign [class="Lxappearance"] $tag4
+assign [class="Gnome-tweaks"] $tag4
+assign [class="Nitrogen"] $tag4
 assign [class="cantata"] $tag5
 assign [class="systemsettings"] $tag5
 assign [class="ktorrent"] $tag6
+assign [class="Steam"] $tag6
