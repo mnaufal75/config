@@ -7,9 +7,9 @@ Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary' " Easy commenting
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
-Plug 'pangloss/vim-javascript' " Js hightlight
-Plug 'maxmellon/vim-jsx-pretty' " Jsx highlight
+Plug 'sheerun/vim-polyglot'
 Plug 'joshdick/onedark.vim' " One Dark Theme
+Plug 'morhetz/gruvbox' " Gruvbox Theme
 Plug 'Yggdroot/indentLine' " Show indentation line
 Plug 'junegunn/fzf' " Fuzzy finder
 Plug 'junegunn/fzf.vim'
@@ -104,13 +104,7 @@ inoremap <Right> <Nop>
 " Add underline syntax details
 syntax enable
 
-" Set color scheme
-let g:onedark_color_overrides = {
-\ "comment_grey": {"gui": "#69747C","cterm": "245", "cterm16": "8"},
-\ "gutter_fg_grey": { "gui": "#69747C", "cterm": "245", "cterm16": "8"}
-\}
-let g:onedark_terminal_italics = 1
-colorscheme onedark 
+colorscheme gruvbox 
 
 " Black theme
 set background=dark
