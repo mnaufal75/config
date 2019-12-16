@@ -1,9 +1,9 @@
-!Xft.dpi:                    72
-!Xft.antialias:              false
-!Xft.rgba:                   rgb
-!Xft.hinting:                true
-!Xft.hintstyle:              hintslight
-!Xft.lcdfilter:              lcddefault
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                false
+Xft.hintstyle:              hintnone
+Xft.lcdfilter:              lcddefault
 
 ! Rofi configuration
 
