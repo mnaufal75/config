@@ -1,6 +1,7 @@
 [user]
 	email = mnaufal75@gmail.com
 	name = Muhammad Naufal
+  username = mnaufal75
 
 [color]
 	ui = true
@@ -66,6 +67,13 @@
 	sl = stash list
 	sa = stash apply
 	ss = stash save
+
 [core]
 	autocrlf = false
-	excludesfile = C:\\Users\\mnaufal75\\Documents\\gitignore_global.txt
+  excludesfile = ~/.gitignore
+
+; [http]
+  ; proxy = http://proxy.informatika.lipi.go.id:3128
+;
+; [https]
+  ; proxy = https://proxy.informatika.lipi.go.id:3128
