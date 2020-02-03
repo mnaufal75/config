@@ -41,7 +41,7 @@ module-margin-right = 0
 
 modules-left = i3 right 
 modules-center =  left mpd date right
-modules-right = left netspeed line memory cpu line xbacklight pulseaudio headphone
+modules-right = left ping line memory cpu line xbacklight pulseaudio headphone
 overline-size = 6
 overline-color=${colors.xbs}
 underline-size = 3
