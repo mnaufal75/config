@@ -24,12 +24,13 @@
 #convert /tmp/screen_locked.png -blur 2x2 /tmp/screen_locked2.png
 #i3lock -i /tmp/screen_locked2.png
 
-icon="$HOME/Pictures/anonymous-stop.png"
+icon="$HOME/Pictures/lock.png"
 tmpbg='/tmp/screen.png'
 
 (( $# )) && { icon=$1; }
 
 scrot "$tmpbg"
 convert "$tmpbg" -scale 10% -scale 1000% "$tmpbg"
+convert "$icon" -resize 128x128 "$icon"
 convert "$tmpbg" "$icon" -gravity center -composite -matte "$tmpbg"
 i3lock -u -i "$tmpbg"

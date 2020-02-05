@@ -97,7 +97,9 @@ bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+# lock i3 
+bindsym $mod+Shift+l exec "$HOME/.config/i3/scripts/i3lock.sh", mode="default"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -157,7 +159,7 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-# bindsym $mod+Shift+e mode "$mode_system"
+bindsym $mod+Shift+e mode "$mode_system"
 
 # Thinkpad T460 Media keys
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
@@ -178,7 +180,8 @@ bindsym $mod+End exec python ~/scripts/i3-snap-window.py 2
 exec_always --no-startup-id  ~/.config/polybar/launchi3.sh
 exec --no-startup-id nm-applet
 exec --no-startup-id compton --config ~/.config/compton/compton.conf &
-exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
+# exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper
+exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 ## Plasma Integration
@@ -203,6 +206,7 @@ for_window [title="Add"] floating enable, border none
 
 ## Assign programs to certain workspaces
 assign [class="Firefox"] $tag1
+assign [class="Google-chrome"] $tag1
 assign [class="dolphin"] $tag3
 assign [class="Anki"] $tag3
 assign [class="code"] $tag3
