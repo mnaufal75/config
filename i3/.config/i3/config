@@ -176,6 +176,9 @@ bindsym $mod+minus scratchpad show
 bindsym $mod+Home exec python ~/scripts/i3-snap-window.py 1
 bindsym $mod+End exec python ~/scripts/i3-snap-window.py 2
 
+bindsym $mod+Print exec scrot
+bindsym --release $mod+Shift+Print exec scrot -s
+
 # Startup programs
 exec_always --no-startup-id  ~/.config/polybar/launchi3.sh
 exec --no-startup-id nm-applet
