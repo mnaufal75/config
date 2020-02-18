@@ -71,9 +71,3 @@
 [core]
 	autocrlf = false
   excludesfile = ~/.gitignore
-
-; [http]
-  ; proxy = http://proxy.informatika.lipi.go.id:3128
-;
-; [https]
-  ; proxy = https://proxy.informatika.lipi.go.id:3128
