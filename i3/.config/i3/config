@@ -125,11 +125,11 @@ client.background $transparent
 set $mode_system System (l) lock, (e) exit, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) Shutdown
 mode "$mode_system" {
     bindsym l exec "$HOME/.config/i3/scripts/i3lock.sh", mode "default"
-    bindsym e exec i3exit exit, mode "default"
-    bindsym s exec i3exit suspend, mode "default"
-    bindsym h exec i3exit hibernate, mode "default"
-    bindsym r exec i3exit reboot, mode "default"
-    bindsym Shift+s exec i3exit poweroff, mode "default"
+    bindsym e exec "$HOME/.config/i3/scripts/i3exit.sh" exit, mode "default"
+    bindsym s exec "$HOME/.config/i3/scripts/i3exit.sh" suspend, mode "default"
+    bindsym h exec "$HOME/.config/i3/scripts/i3exit.sh" hibernate, mode "default"
+    bindsym r exec "$HOME/.config/i3/scripts/i3exit.sh" reboot, mode "default"
+    bindsym Shift+s exec "$HOME/.config/i3/scripts/i3exit.sh" poweroff, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -155,6 +155,8 @@ bindsym $mod+End exec python ~/scripts/i3-snap-window.py 2
 bindsym $mod+Print exec scrot
 bindsym --release $mod+Shift+Print exec scrot -s
 
+bindsym $mod+c exec gsimplecal
+
 # Startup programs
 exec_always --no-startup-id  ~/.config/polybar/launchi3.sh
 exec --no-startup-id nm-applet
@@ -162,6 +164,8 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf &
 # exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec --no-startup-id copyq
+exec --no-startup-id xsettingsd &
 
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
@@ -179,16 +183,17 @@ for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
 
-for_window [title="Statistics"] floating enable, border none
-for_window [title="Browse"] floating enable, border none
-for_window [title="Add"] floating enable, border none
+for_window [title="Statistics|Browse|Add"] floating enable, border none
+
+for_window [title="feh"] floating enable, border none
+for_window [title="gsimplecal"] floating enable, border none
 
 ## Assign programs to certain workspaces
 assign [class="Firefox"] $tag1
 assign [class="Google-chrome"] $tag1
-assign [class="dolphin"] $tag3
 assign [class="Anki"] $tag3
 assign [class="code"] $tag3
+assign [class="dolphin"] $tag4
 assign [class="qt5ct"] $tag4
 assign [class="Lxappearance"] $tag4
 assign [class="Gnome-tweaks"] $tag4
