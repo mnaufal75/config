@@ -6,16 +6,11 @@
 
 # 2016 Oliver Kraitschy - http://okraits.de
 
-OPTIONS="􀅈\n􀆨\n􀖃"
+OPTIONS="a\nb\nc"
 
-# source configuration or use default values
-if [ -f $HOME/.config/rofi-power/config ]; then
-  source $HOME/.config/rofi-power/config
-else
-  LAUNCHER="rofi -width 30 -dmenu -i -p power -config ~/.config/rofi/themes/Powermenu.rasi "
-  USE_LOCKER="false"
-  LOCKER="i3lock"
-fi
+LAUNCHER="rofi -width 30 -dmenu -i -p power -config ~/config/rofi/.config/rofi/themes/Powermenu.rasi "
+USE_LOCKER="false"
+LOCKER="i3lock"
 
 # Show exit wm option if exit command is provided as an argument
 if [ ${#1} -gt 0 ]; then
@@ -29,13 +24,13 @@ then
       Exit)
         eval $1
         ;;
-      􀅈)
+      a)
         systemctl reboot
         ;;
-      􀆨)
+      b)
         systemctl poweroff
         ;;
-      􀖃)
+      c)
         $($USE_LOCKER) && "$LOCKER"; systemctl suspend
         ;;
       *)

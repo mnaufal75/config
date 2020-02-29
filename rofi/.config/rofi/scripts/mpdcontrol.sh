@@ -6,9 +6,9 @@
 
 # 2016 Oliver Kraitschy - http://okraits.de
 if mpc status|head -2|grep paused;then
-    OPTIONS="􀊚\n􀊎\n􀊐\n􀊝\n􀊞\n􀊟"
+    OPTIONS="a\nb\nc\nd\ne\nf"
 else
-    OPTIONS="􀊜\n􀊎\n􀊐\n􀊝\n􀊞\n􀊟"
+    OPTIONS="z\nb\nc\nd\ne\nf"
 fi
 
 # source configuration or use default values
@@ -26,28 +26,28 @@ then
       Exit)
         eval $1
         ;;
-        􀊚)
+        a)
             mpc play
             ;;
-        􀊜)
+        z)
             mpc pause
             ;;
-        􀊚)
+        c)
             mpc play
             ;;
-        􀊎)
+        d)
             mpc prev
             ;;
-        􀊐)
+        e)
             mpc next
             ;;
-        􀊟)
+        f)
             mpc single
             ;;
-        􀊞)
+        g)
             mpc repeat
             ;;
-        􀊝)
+        b)
             mpc random
             ;;
         *)

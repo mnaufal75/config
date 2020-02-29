@@ -1,7 +1,5 @@
 #!/bin/bash
 
-
-
 Wallpaper="nitrogen"
 Volume="pavucontrol"
 Power="xfce4-power-manager"
@@ -10,7 +8,7 @@ GtkTheme="lxappearance"
 Network="nm-connection-editor"
 
 # you can customise the rofi command all you want ...
-rofi_command="rofi -config $HOME/.dotfiles/config/rofi/themes/default.rasi "
+rofi_command="rofi -config $HOME/config/rofi/.config/rofi/themes/default.rasi "
 
 options=$'Wallpaper\nVolume\nPower\nGtkTheme\nNetwork\nCancel'
 
