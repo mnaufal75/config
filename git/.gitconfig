@@ -1,7 +1,7 @@
 [user]
 	email = mnaufal75@gmail.com
 	name = Muhammad Naufal
-  username = mnaufal75
+	username = mnaufal75
 
 [color]
 	ui = true
@@ -70,4 +70,5 @@
 
 [core]
 	autocrlf = false
-  excludesfile = ~/.gitignore
+	excludesfile = ~/.gitignore
+    editor = vim
