@@ -164,8 +164,6 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf &
 # exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
-exec --no-startup-id copyq
-exec --no-startup-id xsettingsd &
 
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
@@ -201,4 +199,5 @@ assign [class="Nitrogen"] $tag4
 assign [class="cantata"] $tag5
 assign [class="systemsettings"] $tag5
 assign [class="ktorrent"] $tag6
+assign [class="qBittorrent"] $tag6
 assign [class="Steam"] $tag6

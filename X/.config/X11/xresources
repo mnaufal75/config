@@ -1,0 +1,75 @@
+Xft.dpi:                    96
+Xft.antialias:              true
+Xft.rgba:                   rgb
+Xft.hinting:                false
+Xft.hintstyle:              hintnone
+Xft.lcdfilter:              lcddefault
+
+! Rofi configuration
+rofi.kb-row-up:             Up,Control-k,Control-p,Shift+Tab
+rofi.kb-row-down:           Down,Control-j,Control-n
+rofi.kb-remove-to-eol:      Control-Shift-k
+rofi.kb-accept-entry:       Control+m,Return,KP_Enter
+
+! URxvt configuration
+URxvt.depth:                32
+URxvt.loginShell:           true
+URxvt.termName:             rxvt-unicode-256color
+
+!! Common Keybinds for Navigations
+URxvt.keysym.Shift-Up: 			command:\033]720;1\007
+URxvt.keysym.Shift-Down: 		command:\033]721;1\007
+URxvt.keysym.Control-Up: 		\033[1;5A
+URxvt.keysym.Control-Down: 		\033[1;5B
+URxvt.keysym.Control-Right:		\033[1;5C
+URxvt.keysym.Control-Left: 		\033[1;5D
+
+! Fonts
+URxvt.font: 				xft:Cozette:size=12
+URxvt.boldFont: 			xft:Cozette:size=12
+
+! Scrollbar
+URxvt.scrollStyle:          rxvt
+URxvt.scrollBar:            false
+
+! Perl extensions
+URxvt.perl-ext-common:      default,keyboard-select
+URxvt.keysym.M-Escape:	    perl:keyboard-select:activate
+URxvt.url-launcher:         xdg-open
+
+! Cursor
+URxvt.cursorBlink:          false
+URxvt.cursorColor:          #657b83
+URxvt.cursorUnderline:      false
+
+! Pointer
+URxvt.pointerBlank:         true
+
+! hard contrast: *background: #1d2021
+*background: #282828
+! soft contrast: *background: #32302f
+*foreground: #ebdbb2
+! Black + DarkGrey
+*color0:  #282828
+*color8:  #928374
+! DarkRed + Red
+*color1:  #cc241d
+*color9:  #fb4934
+! DarkGreen + Green
+*color2:  #98971a
+*color10: #b8bb26
+! DarkYellow + Yellow
+*color3:  #d79921
+*color11: #fabd2f
+! DarkBlue + Blue
+*color4:  #458588
+*color12: #83a598
+! DarkMagenta + Magenta
+*color5:  #b16286
+*color13: #d3869b
+! DarkCyan + Cyan
+*color6:  #689d6a
+*color14: #8ec07c
+! LightGrey + White
+*color7:  #a89984
+*color15: #ebdbb2

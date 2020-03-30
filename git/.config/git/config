@@ -71,4 +71,4 @@
 [core]
 	autocrlf = false
 	excludesfile = ~/.gitignore
-    editor = vim
+	editor = vim
