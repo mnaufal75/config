@@ -1,9 +1,16 @@
-* {
+/* * {
     xbs:#4169e1;
     xfs:#e1e1e1;
     xbg:#f2eeed;
     xfg:#191919;
     transparent: #00000000;
+} */
+
+ * {
+    xbs:#d79921;
+    xfs:#282828;
+    xbg:#282828;
+    xfg:#ebdbb2;
+    transparent: #00000000;
 }
 
- 

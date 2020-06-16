@@ -3,7 +3,7 @@ export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
 export ZSH="/home/mnaufal75/Project/git_modules/.oh-my-zsh"
 
-ZSH_THEME="random"
+ZSH_THEME="jbergantine"
 
 plugins=(git zsh-z)
 
@@ -22,3 +22,4 @@ alias vim="nvim"
 # [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 # source /usr/share/fzf/completion.zsh
 # source /usr/share/fzf/key-bindings.zsh
+VBOX_USB=usbfs

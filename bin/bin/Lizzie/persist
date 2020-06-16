@@ -1,0 +1,27 @@
+{
+  "autosave": "(;DT[2020-06-08]KM[7.5]PB[]PW[]SZ[19]AP[Lizzie: 0.7.2])",
+  "ui-persist": {
+    "main-board-position": [],
+    "sub-board-position": [],
+    "gtp-console-position": [
+      7,
+      -80,
+      679,
+      786
+    ],
+    "basic-info-position": [],
+    "variation-tree-position": [],
+    "comment-position": [],
+    "board-position-proportion": 4,
+    "winrate-position": [],
+    "window-maximized": false,
+    "main-window-position": [
+      681,
+      4,
+      687,
+      766
+    ],
+    "toolbar-position": "South"
+  },
+  "filesystem": {"last-folder": "/home/mnaufal75/Downloads"}
+}

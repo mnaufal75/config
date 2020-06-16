@@ -21,6 +21,7 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec termite
+bindsym $mod+Shift+Return exec urxvt
 bindsym $mod+d exec --no-startup-id rofi -show drun -m -1
 
 # kill focused window
@@ -137,12 +138,17 @@ mode "$mode_system" {
 }
 bindsym $mod+Shift+e mode "$mode_system"
 
-# Thinkpad T460 Media keys
+# Media keys
 # bindsym XF86MonBrightnessUp exec xbacklight -inc 10 # increase screen brightness
 # bindsym XF86MonBrightnessDown exec xbacklight -dec 10 # decrease screen brightness
 # bindsym XF86AudioRaiseVolume exec --no-startup-id amixer sset Master 5%+ #increase sound volume
 # bindsym XF86AudioLowerVolume exec --no-startup-id amixer sset Master 5%- #decrease sound volume
 # bindsym XF86AudioMute exec --no-startup-id amixer sset Master toggle # mute sound
+
+bindsym $mod+i exec --no-startup-id xrandr -o normal
+bindsym $mod+j exec --no-startup-id xrandr -o left
+bindsym $mod+l exec --no-startup-id xrandr -o right
+bindsym $mod+k exec --no-startup-id xrandr -o inverted
 
 # Make the currently focused window a scratchpad
 bindsym $mod+Shift+minus move scratchpad
@@ -164,6 +170,7 @@ exec --no-startup-id compton --config ~/.config/compton/compton.conf &
 # exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper
 exec --no-startup-id nitrogen --restore &
 exec --no-startup-id dunst -config ~/.config/dunst/dunstrc
+exec --no-startup-id xset +fp /usr/share/fonts/jmk
 
 ## Plasma Integration
 # Try to kill the wallpaper set by Plasma (it takes up the entire workspace and hides everythiing)
@@ -181,7 +188,8 @@ for_window [class="Kmix"] floating enable, border none
 for_window [class="Klipper"] floating enable, border none
 for_window [class="Plasmoidviewer"] floating enable, border none
 
-for_window [title="Statistics|Browse|Add"] floating enable, border none
+for_window [title="Statistics|Browse|Add|Preferences"] floating enable, border none
+for_window [title="Friends List|Steam News"] floating enable, border none
 
 for_window [title="feh"] floating enable, border none
 for_window [title="gsimplecal"] floating enable, border none
