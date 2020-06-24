@@ -1,0 +1,7 @@
+nitrogen --restore &
+dunst -config ~/.config/dunst/dunstrc &
+compton &
+tint2 &
+volumeicon &
+nm-applet &
+xfce4-power-manager &
