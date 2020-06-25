@@ -8,12 +8,12 @@
     separator_height = 1
     padding = 10
     horizontal_padding = 10
-    frame_width = 0
-    frame_color = "#232323"
+    frame_width = 2
+    frame_color = "#ebdbb2"
     separator_color = frame
     sort = yes
     idle_threshold = 120
-    font = SFPro Display Nerd Font 10
+    font = SF Pro Display 10
     line_height = 0
     markup = full
     format = "<span><b>%s %p</b></span>\n%b"
@@ -49,18 +49,18 @@
 [urgency_low]
     # IMPORTANT: colors have to be defined in quotation marks.
     # Otherwise the '#' and following  would be interpreted as a comment.
-    background="#e1e1e1"
-    foreground="#191919"
-    timeout = 7
+    background="#282828"
+    foreground="#ebdbb2"
+    timeout = 5
 
 
 [urgency_normal]
-    background="#e1e1e1"
-    foreground="#191919"
-    timeout = 10
+    background="#282828"
+    foreground="#ebdbb2"
+    timeout = 5
 
 
 [urgency_critical]
-    background="#e1e1e1"
-    foreground="#191919"
-    timeout = 0
+    background="#282828"
+    foreground="#ebdbb2"
+    timeout = 5

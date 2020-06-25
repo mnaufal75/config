@@ -16,10 +16,10 @@ height = 22
 
 dim-value = 1.0
 
-border-top-size = 5
-border-bottom-size = 5
-border-right-size = 30
-border-left-size = 30
+border-top-size = 0
+border-bottom-size = 0
+border-right-size = 0
+border-left-size = 0
 border-color =${colors.xbg2}
 
 # bottom = true
@@ -27,7 +27,7 @@ wm-restack = i3
 # override-redirect = true
 
 font-0 = "SF Pro Display:style=regular:size=10;2"
-font-1 = "Hack Nerd Font:style=regular:size=12;3"
+font-1 = "icomoon\-feather:style=regular:size=10;2"
 font-2 = "border:size=14;2"
 
 fixed-center = true
