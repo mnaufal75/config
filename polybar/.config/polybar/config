@@ -27,7 +27,7 @@ wm-restack = i3
 # override-redirect = true
 
 font-0 = "SF Pro Display:style=regular:size=10;2"
-font-1 = "icomoon\-feather:style=regular:size=10;2"
+font-1 = "Anonymice Nerd Font:style=solid:size=14;3"
 font-2 = "border:size=14;2"
 
 fixed-center = true

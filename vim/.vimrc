@@ -1,7 +1,7 @@
 set nocompatible
 filetype off
 
-call plug#begin('~/.vim/plugged')
+call plug#begin(stdpath('data') . '/plugged')
 
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-commentary' " Easy commenting
@@ -18,6 +18,10 @@ Plug 'iamcco/markdown-preview.nvim' " Markdown
 Plug 'jiangmiao/auto-pairs'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'honza/vim-snippets'
+Plug 'lervag/vimtex'
+Plug 'lilydjwg/colorizer'
+Plug 'justinmk/vim-sneak'
+Plug 'liuchengxu/vim-which-key'
 
 call plug#end()
 
@@ -79,9 +83,9 @@ au FileType typescript setlocal formatprg=prettier\ --parser\ typescript
 au FileType html setlocal formatprg=js-beautify\ --type\ html
 au FileType css setlocal formatprg=prettier\ --parser\ css
 
-let mapleader = ','
+let mapleader = ' '
 
-" Remap ESC to ii
+" Remap ESC to jk
 inoremap jk <Esc>
 " Disable ESC key in Insert mode
 inoremap <Esc> <nop>
@@ -138,18 +142,64 @@ let g:fzf_colors =
   \ 'spinner': ['fg', 'Label'],
   \ 'header':  ['fg', 'Comment'] }
 
-nnoremap <silent> <leader>f :GFiles<CR> " Search for file in git project
-nnoremap <silent> <leader>F :Files<CR> " Search for file
-nnoremap <silent> <leader>b :Buffers<CR> " List all buffers
-nnoremap <silent> <leader>l :BLines<CR> " Search line on current buffer
-nnoremap <silent> <leader>L :Lines<CR> " Search line on all loaded buffers
-nnoremap <silent> <leader>/ :Ag<CR> " Search on all project
-nnoremap <silent> <leader>gs :GFiles?<CR> " Search for git status
+nnoremap <silent> <leader>f :GFiles<CR> |" Search for file in git project
+nnoremap <silent> <leader>F :Files<CR> |" Search for file
+nnoremap <silent> <leader>b :Buffers<CR> |" List all buffers
+nnoremap <silent> <leader>l :BLines<CR> |" Search line on current buffer
+nnoremap <silent> <leader>L :Lines<CR> |" Search line on all loaded buffers
+nnoremap <silent> <leader>/ :Ag<CR> |" Search on all project
+nnoremap <silent> <leader>gs :GFiles?<CR> |" Search for git status
 
 """"""""""""""""""
 " Vim-commentary "
 """"""""""""""""""
 autocmd FileType python setlocal commentstring=#\ %s
+
+""""""""""
+" Vimtex "
+""""""""""
+let g:tex_flavor='latex'
+let g:vimtex_view_method='zathura'
+let g:vimtex_quickfix_mode=0
+" set conceallevel=1
+" let g:tex_conceal='abdmg'
+
+"""""""""
+" Sneak "
+"""""""""
+let g:sneak#label = 1
+
+" case insensitive sneak
+let g:sneak#use_ic_scs = 1
+
+" immediately move to the next instance of search, if you move the cursor sneak is back to default behavior
+let g:sneak#s_next = 1
+
+" remap so I can use , and ; with f and t
+map gS <Plug>Sneak_,
+map gs <Plug>Sneak_;
+
+" Change the colors
+highlight Sneak guifg=black guibg=#00C7DF ctermfg=black ctermbg=cyan
+highlight SneakScope guifg=red guibg=yellow ctermfg=red ctermbg=yellow
+
+" Cool prompts
+" let g:sneak#prompt = '🕵'
+" let g:sneak#prompt = '🔎'
+
+" I like quickscope better for this since it keeps me in the scope of a single line
+map f <Plug>Sneak_f
+map F <Plug>Sneak_F
+map t <Plug>Sneak_t
+map T <Plug>Sneak_T
+
+
+nnoremap <silent> g             :<c-u>WhichKey 'g'<CR>
+nnoremap <silent> z             :<c-u>WhichKey 'z'<CR>
+nnoremap <silent> [             :<c-u>WhichKey '['<CR>
+nnoremap <silent> ]             :<c-u>WhichKey ']'<CR>
+nnoremap <silent> <leader>      :<c-u>WhichKey '<Space>'<CR>
+nnoremap <silent> <localleader> :<c-u>WhichKey ','<CR>
 
 """"""""""""""
 "  coc.nvim  "
